@@ -2,26 +2,33 @@
 
 import Image from "next/image";
 import Header from "@/components/HeaderCom";
-import React, { useState } from "react";
+import UrlModal from "@/components/UrlModal";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const router = useRouter
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [newUrl, setNewUrl] = useState("")
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(title, content);
+    
       try {
         const response = await axios.post("/api/paster", { title, content });
         if(response.data) {
-          console.log(response.data);
-          
+          console.log(response.data.lastPaster);
+          setTitle("");
+          setContent("");
+          setNewUrl(response.data.lastPaster);
         }
       } catch (error) {
         console.log(error.message);
       }
     };
+    console.log(newUrl);
+    useEffect(() => {}, [newUrl]);
+    
   return (
     <div>
       <header className="border-b border-gray-100 flex justify-between px-8 h-[60px] font-sans">
@@ -43,6 +50,7 @@ export default function Home() {
           </div>
         </div>
       </main>
+      {newUrl && <UrlModal newUrl={newUrl} setNewUrl={setNewUrl} />}
     </div>
   );
 }

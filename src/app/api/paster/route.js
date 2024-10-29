@@ -1,7 +1,8 @@
-import connectToDatabase from "@/dbconfig/dbconfig";
+// 'use client'
+
+import connectToDatabase from "../../dbconfig/dbconfig";
 import Paster from "../../../models/pasterModel"
 import { NextRequest, NextResponse } from "next/server";
-import { log } from "console";
 
 connectToDatabase();
 
@@ -12,20 +13,21 @@ export async function POST(request) {
         console.log(reqBody);
 
         const newPaster = new Paster({
-            title: title,
-            content: content
+            title,
+            content
         })
-
-        // const savedPaster = 
-        await newPaster.save();
-        // console.log(savedPaster);
-        
+        const savedPaster = await newPaster.save(); // Ensure this line is uncommented
+        console.log(savedPaster); // Log the saved document for debugging
+        const lastPaster = await Paster.findOne({})
+        .sort({createdAt: -1})
+        .exec();
         const response = NextResponse.json ({
             message: "Pasted successfully",
             success: true,
+            lastPaster: lastPaster._id
         })
         
-        return response
+        return response;
 
     } catch (error) {
         return NextResponse.json({ error: error.message }, { status: 500 })
