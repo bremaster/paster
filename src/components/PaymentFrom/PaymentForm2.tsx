@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, Dispatch, SetStateAction } from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 
 const PaymentForm2 = ({
   price,
@@ -30,7 +30,6 @@ const PaymentForm2 = ({
 
       <div className="flex-1 p-6">
         <h2 className="text-xl font-bold mb-4">Your details</h2>
-        <p className="text-gray-400 mb-4">We collect this information to help combat fraud, and to keep your payment secure.</p>
         <form className="space-y-4">
 
         </form>

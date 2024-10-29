@@ -41,7 +41,7 @@ const PaymentForm1 = ({
         <h2 className="text-xl font-bold mb-4">Your details</h2>
         <p className="text-gray-400 mb-4">We collect this information to help combat fraud, and to keep your payment secure.</p>
 
-        {/* <form className="space-y-4" onSubmit={onSubmit}>
+        <form className="space-y-4" onSubmit={onSubmit}>
           <div>
             <label className="block text-gray-400 mb-1">Email address <span className="text-red-500">*</span></label>
             <input type="email" required value={email} onChange={e => setEmail(e.target.value)} className="w-full p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" placeholder="email@example.com" />
@@ -57,8 +57,8 @@ const PaymentForm1 = ({
             <input type="text" required value={zipcode} onChange={e => setZipcode(e.target.value)} className="w-full p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-indigo-500" placeholder="ZIP/Postcode"/>
           </div>
 
-          <input type="submit" className="w-full py-3 bg-indigo-600 text-white font-semibold rounded hover:bg-indigo-700">Continue</input>
-        </form> */}
+          <button type="submit" className="w-full py-3 bg-indigo-600 text-white font-semibold rounded hover:bg-indigo-700">Continue</button>
+        </form>
       </div>
     </div>
   )
