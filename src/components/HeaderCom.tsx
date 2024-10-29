@@ -25,7 +25,6 @@ const HeaderCom = () => {
         }
       } catch (error) {
         console.error("Verification failed:", error);
-        router.push('/auth');
       }
     };
 

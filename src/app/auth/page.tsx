@@ -18,12 +18,12 @@ const Auth = () => {
     e.preventDefault();
     if (!flag) { setFlag(true); }
     else {
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!regex.test(email)){
-          alert("Wrong Email type");
-          return ;
-        };
-        
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!regex.test(email)){
+        alert("Wrong Email type");
+        return ;
+      };
+
       try {
         const response = await axios.post("/api/auth/login", { email: email });
         if (response.data.success) {
