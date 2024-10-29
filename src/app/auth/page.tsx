@@ -2,19 +2,19 @@
 
 import Image from 'next/image'
 import MailSignIn from '@/components/Mailsignin'
-import React, { useState } from 'react';
+import React, { useState, FormEvent } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { useDispatch } from 'react-redux';
 import { login } from '@/store/authSlice';
 
-const page = () => {
+const Auth = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const [flag, setFlag] = useState(false);
   const [email, setEmail] = useState("");
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: FormEvent ) => {
     e.preventDefault();
     if (!flag) { setFlag(true); }
     else {
@@ -62,4 +62,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Auth

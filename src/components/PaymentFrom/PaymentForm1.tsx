@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, Dispatch, SetStateAction } from 'react'
+import React, { useState, Dispatch, SetStateAction, FormEvent } from 'react'
 
 const PaymentForm1 = ({
   price,
@@ -13,7 +13,7 @@ const PaymentForm1 = ({
   const [country, setCountry] = useState('');
   const [zipcode, setZipcode] = useState('');
 
-  const onSubmit = (e: any) => {
+  const onSubmit = (e: FormEvent) => {
     console.log("321321")
     setStep(2)
   }
