@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 
-const Header = () => {
+const HeaderCom = () => {
   const router = useRouter();
   const [email, setEmail] = useState("");
   useEffect(() => {
@@ -54,4 +54,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default HeaderCom
