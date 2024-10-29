@@ -8,7 +8,7 @@
 //     'client_secret': process.env.PAYPAL_CLIENT_SECRET,
 // });
 
-export const createPayment = (amount, currency) => {
+export const createPayment = () => {
     // return new Promise((resolve, reject) => {
     //     const paymentData = {
     //         intent: 'sale',
