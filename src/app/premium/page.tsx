@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import Header from '@/components/Header'
-import PaymentForm from '@/app/premium/paymentForm'
+import Header from '../../components/Header'
+import PaymentForm from './paymentForm'
 
 const Premium = () => {
   return (
