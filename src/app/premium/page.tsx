@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import Header from '@/components/Header'
+import Header from '../../components/Header'
 import PaymentForm from './paymentForm'
 
 const Premium = () => {
