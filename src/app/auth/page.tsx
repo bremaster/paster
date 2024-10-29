@@ -14,14 +14,14 @@ const Auth = () => {
   const [flag, setFlag] = useState(false);
   const [email, setEmail] = useState("");
 
-  const handleSubmit = async (e: FormEvent ) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!flag) { setFlag(true); }
     else {
       const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!regex.test(email)){
+      if (!regex.test(email)) {
         alert("Wrong Email type");
-        return ;
+        return;
       };
 
       try {
@@ -39,13 +39,12 @@ const Auth = () => {
   return (
     <div>
       <div className='w-fit m-auto flex flex-col items-center mt-[20vh] justify-between'>
-        <Image width={41} height={41} alt="standard" src="./standard.svg" className='mx-auto mb-8' />
-        <h1 className='text-3xl'>Your Paster Account</h1>
+        <Image width={41} height={41} alt="standard" src="/Logo.png" className='mx-auto mb-8' />
+        <h1 className='text-3xl'>Your PasteKing Account</h1>
         <div className='mt-6'>
-          <MailSignIn value={"Continue with Google"} img_icon={"/googleicon.svg"} />
-          <MailSignIn value={"Continue with Apple"} img_icon={"/appleicon.svg"} />
-          <MailSignIn value={"Continue with Discord"} img_icon={"/discordicon.svg"} />
-          <hr className={!flag ? `mr-4 border-0` : `mt-8 mr-4 transition-all duration-500`} />
+          <button onClick={handleSubmit} className={`flex items-center justify-center bg-white bg-opacity-15 hover:bg-blue-200 hover:bg-opacity-45 transition-all p-4 mt-4 rounded-md border w-80`}>
+            Continue with Email
+          </button>
           <input
             type='text'
             value={email}
@@ -53,9 +52,9 @@ const Auth = () => {
             placeholder='Your email address'
             className={`flex items-center justify-center bg-white bg-opacity-15 hover:bg-blue-200 hover:bg-opacity-45  ` + (!flag ? `h-0` : ` transition-all duration-500 p-4 mt-4 rounded-md border w-80`)}
           />
-          <button onClick={handleSubmit} className={`flex items-center justify-center bg-white bg-opacity-15 hover:bg-blue-200 hover:bg-opacity-45 transition-all p-4 mt-4 rounded-md border w-80`}>
-            Continue with Email
-          </button>
+          <hr className={!flag ? `mr-4 border-0` : `mt-8 mr-4 transition-all duration-500`} />
+          <MailSignIn value={"Continue with Google"} img_icon={"/googleicon.svg"} />
+          <MailSignIn value={"Continue with Apple"} img_icon={"/appleicon.svg"} />
         </div>
       </div>
     </div>

@@ -11,8 +11,8 @@ const Premium = () => {
       </header>
       <div>
         <div className='mt-8 flex flex-col w-fit items-center mx-auto'>
-          <Image width={48} height={48} alt='bluejewel' src="/jewel-blue.svg" className=' mb-[20px]' />
-          <p className='text-[15px] tracking-[0.5em] mb-[15px] bg-gradient-to-r from-red-800 via-red-600 to-black bg-clip-text text-transparent'>PASTER PREMIIM</p>
+          <Image width={48} height={48} alt='Logo' src="/Logo.png" className=' mb-[20px]' />
+          <p className='text-[15px] tracking-[0.5em] mb-[15px] bg-gradient-to-r from-red-800 via-red-600 to-black bg-clip-text text-transparent'>PASTEKING</p>
           <h1 className='text-2xl  tracking-[0.08em]' >Choose your plan</h1>
           <p className='mt-[17px] mb-11 text-[1em]'>Reminder 7 days before renewal. Cancel anytime</p>
           <div className='w-full border flex rounded-xl'>
@@ -39,9 +39,7 @@ const Premium = () => {
               <div className='mt-8'>
                 <h4 className='mb-2 text-[18px] font-bold'>Preminum benefits</h4>
                 <p className='flex leading-[35px]'> <Image width={16} height={16} alt='tick' src="/tick.svg" className='mr-2' /> Unlimited access</p>
-                <p className='flex leading-[35px]'> <Image width={16} height={16} alt='tick' src="/tick.svg" className='mr-2' /> Millions of contents</p>
                 <p className='flex leading-[35px]'> <Image width={16} height={16} alt='tick' src="/tick.svg" className='mr-2' /> Skip waiting time</p>
-                <p className='flex leading-[35px]'> <Image width={16} height={16} alt='tick' src="/tick.svg" className='mr-2' /> Premium Status</p>
                 <p className='flex leading-[35px]'> <Image width={16} height={16} alt='tick' src="/tick.svg" className='mr-2' /> No ads</p>
               </div>
             </div>
