@@ -14,7 +14,6 @@ const PaymentForm1 = ({
   const [zipcode, setZipcode] = useState('');
 
   const onSubmit = (e: FormEvent) => {
-    console.log("321321")
     setStep(2)
   }
 
