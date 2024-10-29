@@ -37,7 +37,8 @@ const HeaderCom = () => {
         <Link href="/">
           <Image width={23} height={22.5} alt='standard' src="/Logo.png" className="mx-2" /></Link>
         {email ? <p> {email} </p> : <Link href="/auth" className="flex items-center hover:bg-white hover:bg-opacity-20 rounded-md p-1">
-          <Image width={20} height={20} alt="dummy" src="/dummy-profile.jpeg" className="mx-2 rounded-md h-[20px]" /> Sign in
+          {/* <Image width={20} height={20} alt="dummy" src="/dummy-profile.jpeg" className="mx-2 rounded-md h-[20px]" />  */}
+          Sign in
           <Image width={12} height={12} alt='updownarrow' src="/updownarrow.svg" className='ml-1' />
         </Link>}
       </div>

@@ -27,13 +27,13 @@ const Premium = () => {
               </p>
               <div className='flex gap-2'>
                 <div className='w-[60px] h-[60px] flex leading-5 justify-center items-center flex-col text-xl rounded-sm border border-gray-500'>
-                  0 <br /> <span className='text-[12px]'>Min</span>
+                  48 <br /> <span className='text-[12px]'>Hrs</span>
                 </div>
                 <div className='w-[60px] h-[60px] flex leading-5 justify-center items-center flex-col text-xl rounded-sm border border-gray-500'>
-                  0 <br /> <span className='text-[12px]'>Sec</span>
+                  0 <br /> <span className='text-[12px]'>Mins</span>
                 </div>
                 <div className='w-[60px] h-[60px] flex leading-5 justify-center items-center flex-col text-xl rounded-sm border border-gray-500'>
-                  0 <br /> <span className='text-[12px]'>Ms </span>
+                  0 <br /> <span className='text-[12px]'>Secs </span>
                 </div>
               </div>
               <div className='mt-8'>
