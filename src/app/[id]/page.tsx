@@ -12,8 +12,8 @@ interface Paster {
 // Connect to MongoDB
 async function connectToDatabase() {
     const client = new MongoClient(process.env.MONGODB_URI || "", {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
+        // useNewUrlParser: true,
+        // useUnifiedTopology: true,
     });
     await client.connect();
     return client;
@@ -26,7 +26,16 @@ const fetchPasterById = async (id: string): Promise<Paster | null> => {
     const pastersCollection = database.collection("pasters");
     const paster = await pastersCollection.findOne({ _id: new ObjectId(id) }); // Use ObjectId
     client.close();
-    return paster ? { ...paster, createdAt: paster.createdAt.toISOString() } : null;
+    // return paster ? { ...paster, createdAt: paster.createdAt.toISOString() } : null;
+    if (paster && 'title' in paster && 'content' in paster && 'createdAt' in paster) {
+        return {
+            title: paster.title,
+            content: paster.content,
+            createdAt: paster.createdAt.toISOString() // Ensure createdAt is a string
+        };
+    }
+
+    return null; // Return null if the document is not found or lacks required fields
 };
 
 const PasterDetail = async ({ params }: { params: { id: string } }) => {

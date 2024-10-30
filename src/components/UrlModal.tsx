@@ -1,9 +1,13 @@
 'use client'
 
-import Image from "next/image";
 import React, { useState } from "react";
 
-const UrlModal = ({ newUrl, setNewUrl }) => {
+interface UrlModalProps {
+    newUrl: string; // Type for newUrl
+    setNewUrl: (url: string) => void; // Type for setNewUrl function
+}
+
+const UrlModal: React.FC<UrlModalProps> = ({ newUrl, setNewUrl }) => {
 
 
     const handleCopyToClipboard = async () => {
