@@ -7,6 +7,7 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { useDispatch } from 'react-redux';
 import { login } from '@/store/authSlice';
+import Link from 'next/link';
 
 const Auth = () => {
   const router = useRouter();
@@ -39,7 +40,9 @@ const Auth = () => {
   return (
     <div>
       <div className='w-fit m-auto flex flex-col items-center mt-[20vh] justify-between'>
-        <Image width={41} height={41} alt="standard" src="/Logo.png" className='mx-auto mb-8' />
+        <Link href={"/"}>
+          <Image width={41} height={41} alt="standard" src="/Logo.png" className='mx-auto mb-8' />
+        </Link>
         <h1 className='text-3xl'>Your PasteKing Account</h1>
         <div className='mt-6'>
           <button onClick={handleSubmit} className={`flex items-center justify-center bg-white bg-opacity-15 hover:bg-blue-200 hover:bg-opacity-45 transition-all p-4 mt-4 rounded-md border w-80`}>
