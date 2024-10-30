@@ -21,8 +21,8 @@ const PaymentForm1 = ({
     <div className="max-w-2xl w-full bg-gray-900 rounded-lg shadow-lg flex flex-col md:flex-row">
       <div className="flex-1 p-6 border-b border-gray-700 md:border-b-0 md:border-r">
         <h2 className="text-xl font-bold text-indigo-400 mb-4">Order summary</h2>
-        <div className="text-3xl font-semibold text-indigo-400 mb-1">€9.99 <span className="text-sm font-normal">inc. VAT</span></div>
-        <p className="text-gray-400 mb-4">then €9.99 monthly</p>
+        <div className="text-3xl font-semibold text-indigo-400 mb-1">€{price} <span className="text-sm font-normal">inc. VAT</span></div>
+        <p className="text-gray-400 mb-4">then €{price} monthly</p>
 
         <div className="flex items-center justify-between mb-4">
           <span>Paster Premium</span>
