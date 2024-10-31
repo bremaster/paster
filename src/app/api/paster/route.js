@@ -1,6 +1,6 @@
 // 'use client'
 
-import connectToDatabase from "../../dbconfig/dbconfig";
+import connectToDatabase from "@/dbconfig/dbconfig";
 import Paster from "../../../models/pasterModel"
 import { NextRequest, NextResponse } from "next/server";
 

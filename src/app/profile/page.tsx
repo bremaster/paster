@@ -17,7 +17,7 @@ const Premium = () => {
                 <Header />
             </header>
             <div>
-                <div className='mt-8 flex flex-col container  max-w-7xl mx-auto'>
+                <div className='mt-8 flex flex-col container  max-w-7xl mx-auto px-10'>
                     <div className='h-[150px] mb-14 border-b-2 flex flex-col gap-1 justify-center'>
                         <h1 className='text-[28px]'>Profile</h1>
                         <p className='pb-4 text-[16px]  text-gray-300'>Account id: user_sdfdfsdfsd23423</p>

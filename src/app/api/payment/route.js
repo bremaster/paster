@@ -1,20 +1,35 @@
-// src/app/api/payment/route.js
-import { NextResponse } from 'next/server';
-import { createPayment } from '@/lib/paymentService'; // Import your payment function
+// pages/api/save-transaction.ts
+import  { NextApiRequest, NextApiResponse } from "next";
+import { MongoClient } from "mongodb";
 
-export async function POST(request) {
-    // try {
-    //     const { amount, currency } = await request.json();
 
-    //     if (!amount || !currency) {
-    //         return NextResponse.json({ error: 'Amount and currency are required.' }, { status: 400 });
-    //     }
 
-    //     // Create payment
-    //     const payment = await createPayment(amount, currency);
-    //     return NextResponse.json(payment, { status: 200 });
-    // } catch (error) {
-    //     console.error("Payment API Error:", error);
-    //     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
-    // }
+const uri = process.env.MONGODB_URI; // Your MongoDB connection string
+
+export default async function handler( NextApiRequest,NextApiResponse) {
+    if (req.method === "POST") {
+        const { orderId, payerId, amount } = req.body;
+
+        try {
+            const client = await MongoClient.connect(uri);
+            const db = client.db("pasterdb"); // Replace with your database name
+
+            // Save the transaction
+            await db.collection("transactions").insertOne({
+                orderId,
+                payerId,
+                amount,
+                createdAt: new Date(),
+            });
+
+            client.close();
+            res.status(200).json({ message: "Transaction saved successfully" });
+        } catch (error) {
+            console.error("Database error:", error);
+            res.status(500).json({ error: "Database error" });
+        }
+    } else {
+        res.setHeader("Allow", ["POST"]);
+        res.status(405).end(`Method ${req.method} Not Allowed`);
+    }
 }
