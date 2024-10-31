@@ -11,7 +11,7 @@ interface Paster {
 
 // Connect to MongoDB
 async function connectToDatabase() {
-    const client = new MongoClient(process.env.MONGODB_URI || "");
+    const client = new MongoClient(process.env.MONGODB_URI || "", {});
     await client.connect();
     return client;
 }
