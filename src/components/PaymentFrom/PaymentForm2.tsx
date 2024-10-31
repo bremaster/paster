@@ -1,8 +1,22 @@
 'use client'
 
-import React, { Dispatch, SetStateAction } from 'react'
-import PayButton from "@/components/PaymentFrom/PayButton"
-import axios from 'axios'
+import React, { Dispatch, SetStateAction } from 'react';
+import PayButton from "@/components/PaymentFrom/PayButton";
+import axios from 'axios';
+
+interface PaymentDetails {
+  id: string;
+  payer: {
+    payer_info: {
+      payer_id: string;
+    };
+  };
+  purchase_units: Array<{
+    amount: {
+      value: string;
+    };
+  }>;
+}
 
 const PaymentForm2 = ({
   price,
@@ -11,7 +25,7 @@ const PaymentForm2 = ({
   setModalOpen: Dispatch<SetStateAction<boolean>>,
   price: number,
 }) => {
-  const handlePaymentSuccess = async (details: any) => {
+  const handlePaymentSuccess = async (details: PaymentDetails) => {
     try {
       await axios.post("/api/save-transaction", {
         orderId: details.id,
@@ -22,8 +36,8 @@ const PaymentForm2 = ({
     } catch (error) {
       console.error("Error saving transaction:", error);
     }
-
   };
+
   return (
     <div className="max-w-2xl w-full bg-gray-900 rounded-lg shadow-lg flex flex-col md:flex-row">
       <div className="flex-1 p-6 border-b border-gray-700 md:border-b-0 md:border-r">
@@ -50,7 +64,7 @@ const PaymentForm2 = ({
         </form>
       </div>
     </div>
-  )
+  );
 }
 
-export default PaymentForm2
+export default PaymentForm2;  
