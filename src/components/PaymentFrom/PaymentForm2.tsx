@@ -27,7 +27,7 @@ const PaymentForm2 = ({
 }) => {
   const handlePaymentSuccess = async (details: PaymentDetails) => {
     try {
-      await axios.post("/api/save-transaction", {
+      await axios.post("/api/payment", {
         orderId: details.id,
         payerId: details.payer.payer_info.payer_id,
         amount: details.purchase_units[0].amount.value,
